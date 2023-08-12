@@ -5,14 +5,14 @@ stages:
     deps:
     - path: ml_dev/data_reader.py
       hash: md5
-      md5: 4c90b5b64017d6e11dae2868a2fb4f2e
-      size: 1698
+      md5: 5b6f9129fc7e908df2e03afa8847b31a
+      size: 1704
     outs:
-    - path: data/processed/test.csv
+    - path: data/processed/test_df.csv
       hash: md5
       md5: cea18a6cc812b3ecb2cb91a62cd36e42
       size: 20179
-    - path: data/processed/train.csv
+    - path: data/processed/train_df.csv
       hash: md5
       md5: aad577930771720b3a972095aeb4d14a
       size: 113287
