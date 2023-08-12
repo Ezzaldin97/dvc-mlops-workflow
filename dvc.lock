@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  data_reader:
+    cmd: python ml_dev/data_reader.py
+    deps:
+    - path: ml_dev/data_reader.py
+      hash: md5
+      md5: 4c90b5b64017d6e11dae2868a2fb4f2e
+      size: 1698
+    outs:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: cea18a6cc812b3ecb2cb91a62cd36e42
+      size: 20179
+    - path: data/processed/train.csv
+      hash: md5
+      md5: aad577930771720b3a972095aeb4d14a
+      size: 113287

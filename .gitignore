@@ -1,3 +1,6 @@
 # data files directory
 
 .ipynb_checkpoints/
+
+ml_dev/utils/__pycache__
+ml_dev/__pycache__

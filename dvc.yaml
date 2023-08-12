@@ -1,0 +1,8 @@
+stages:
+  data_reader:
+    cmd: python ml_dev/data_reader.py
+    deps:
+    - ml_dev/data_reader.py
+    outs:
+    - data/processed/train.csv
+    - data/processed/test.csv
