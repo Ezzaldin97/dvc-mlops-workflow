@@ -35,6 +35,6 @@ if __name__ == '__main__':
     df_reader = DataReader("train.csv")
     df = df_reader.reader()
     train, test = df_reader.split_dataset(df)
-    train.to_csv(os.path.join(df_reader.desination_data_path, "train.csv"))
-    test.to_csv(os.path.join(df_reader.desination_data_path, "test.csv"))
+    train.to_csv(os.path.join(df_reader.desination_data_path, "train_df.csv"))
+    test.to_csv(os.path.join(df_reader.desination_data_path, "test_df.csv"))
 
