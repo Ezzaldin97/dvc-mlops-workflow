@@ -4,5 +4,5 @@ stages:
     deps:
     - ml_dev/data_reader.py
     outs:
-    - data/processed/train.csv
-    - data/processed/test.csv
+    - data/processed/train_df.csv
+    - data/processed/test_df.csv
