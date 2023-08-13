@@ -27,12 +27,12 @@ class PerformanceEvaluation:
         probs = self.model.predict_proba(X[self.best_features])
         metrics["f1-score"] = float(f1_score(y, preds, average = self.average))
         metrics["roc_auc_score"] = float(roc_auc_score(y, probs, multi_class = self.multiclass_technique))
-        with open(os.path.join(".", "data", "metrics.yaml"), 'w') as file:
+        with open(os.path.join(".", "eval", "live", "metrics.yaml"), 'w') as file:
             yaml.dump(metrics, file, default_flow_style=False)
         cm = confusion_matrix(y, preds)
         disp = ConfusionMatrixDisplay(confusion_matrix=cm)
         disp.plot()
-        plt.savefig(os.path.join(".", "data", "confusion_matrix.png"), dpi=150, bbox_inches='tight', pad_inches=0)
+        plt.savefig(os.path.join(".", "eval", "confusion_matrix.png"), dpi=150, bbox_inches='tight', pad_inches=0)
         print(f"Evaluation done!")
 
 if __name__ == '__main__':

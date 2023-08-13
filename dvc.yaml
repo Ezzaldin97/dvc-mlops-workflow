@@ -40,5 +40,5 @@ stages:
     - bin/best_features.pkl
     - bin/model.pkl
     outs:
-    - data/metrics.yaml
-    - data/confusion_matrix.png
+    - eval/live/metrics.yaml
+    - eval/confusion_matrix.png
