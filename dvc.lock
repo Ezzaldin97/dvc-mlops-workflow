@@ -56,3 +56,31 @@ stages:
       hash: md5
       md5: bf2aaa0276f425e8f5c1c94ff47a7a28
       size: 162
+  train:
+    cmd: python ml_dev/train.py
+    deps:
+    - path: bin/best_features.pkl
+      hash: md5
+      md5: bf2aaa0276f425e8f5c1c94ff47a7a28
+      size: 162
+    - path: data/processed/pre_test_df.csv
+      hash: md5
+      md5: 8c630845a4e2f24092c3a35e31fa07c5
+      size: 25280
+    - path: data/processed/pre_train_df.csv
+      hash: md5
+      md5: db6cd4a2ea25befc07e3eb32036202a8
+      size: 141716
+    - path: ml_dev/train.py
+      hash: md5
+      md5: b0c748708cee072601f26a089a0edbe4
+      size: 3335
+    outs:
+    - path: bin/hyperparams.pkl
+      hash: md5
+      md5: c9cc08c2591283b4f850f83012e64b0e
+      size: 212
+    - path: bin/model.pkl
+      hash: md5
+      md5: de0b7fd7a129b62d1c561bb1846104af
+      size: 1781622

@@ -22,3 +22,13 @@ stages:
     - data/processed/pre_train_df.csv
     outs:
     - bin/best_features.pkl
+  train:
+    cmd: python ml_dev/train.py
+    deps:
+    - ml_dev/train.py
+    - data/processed/pre_train_df.csv
+    - data/processed/pre_test_df.csv
+    - bin/best_features.pkl
+    outs:
+    - bin/hyperparams.pkl
+    - bin/model.pkl
