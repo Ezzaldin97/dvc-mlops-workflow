@@ -84,3 +84,31 @@ stages:
       hash: md5
       md5: de0b7fd7a129b62d1c561bb1846104af
       size: 1781622
+  evaluate:
+    cmd: python ml_dev/evaluate.py
+    deps:
+    - path: bin/best_features.pkl
+      hash: md5
+      md5: bf2aaa0276f425e8f5c1c94ff47a7a28
+      size: 162
+    - path: bin/model.pkl
+      hash: md5
+      md5: de0b7fd7a129b62d1c561bb1846104af
+      size: 1781622
+    - path: data/processed/pre_test_df.csv
+      hash: md5
+      md5: 8c630845a4e2f24092c3a35e31fa07c5
+      size: 25280
+    - path: ml_dev/evaluate.py
+      hash: md5
+      md5: c16b5389b748c0c73029abf8f10eeabe
+      size: 2016
+    outs:
+    - path: data/confusion_matrix.png
+      hash: md5
+      md5: 8aa48d1bb3c7795ca1096546d51d1c3e
+      size: 26542
+    - path: data/metrics.yaml
+      hash: md5
+      md5: b6d37b4b83f1bdbd7a740a6eca0d09fd
+      size: 373

@@ -32,3 +32,13 @@ stages:
     outs:
     - bin/hyperparams.pkl
     - bin/model.pkl
+  evaluate:
+    cmd: python ml_dev/evaluate.py
+    deps:
+    - ml_dev/evaluate.py
+    - data/processed/pre_test_df.csv
+    - bin/best_features.pkl
+    - bin/model.pkl
+    outs:
+    - data/metrics.yaml
+    - data/confusion_matrix.png
