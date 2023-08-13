@@ -15,3 +15,10 @@ stages:
     outs:
     - data/processed/pre_train_df.csv
     - data/processed/pre_test_df.csv
+  feature_selection:
+    cmd: python ml_dev/feature_selection.py
+    deps: 
+    - ml_dev/feature_selection.py
+    - data/processed/pre_train_df.csv
+    outs:
+    - bin/best_features.pkl

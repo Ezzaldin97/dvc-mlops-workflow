@@ -58,8 +58,8 @@ if __name__ == '__main__':
     test_prepare = DataPreparation("test_df.csv")
     train, test = train_prepare.data_reader(), test_prepare.data_reader()
     train, test = train_prepare.feature_engineering(train), test_prepare.feature_engineering(test)
-    train.to_csv(os.path.join(train_prepare.desination_data_path, "pre_train_df.csv"))
-    test.to_csv(os.path.join(test_prepare.desination_data_path, "pre_test_df.csv"))
+    train.to_csv(os.path.join(train_prepare.desination_data_path, "pre_train_df.csv"), index = False)
+    test.to_csv(os.path.join(test_prepare.desination_data_path, "pre_test_df.csv"), index = False)
     
 
     

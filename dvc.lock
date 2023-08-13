@@ -5,38 +5,54 @@ stages:
     deps:
     - path: ml_dev/data_reader.py
       hash: md5
-      md5: 5b6f9129fc7e908df2e03afa8847b31a
-      size: 1704
+      md5: fdeeb4ec1b5be9129fc3e3e99e078f12
+      size: 1734
     outs:
     - path: data/processed/test_df.csv
       hash: md5
-      md5: cea18a6cc812b3ecb2cb91a62cd36e42
-      size: 20179
+      md5: c77738b2db64158f0e4bc221bfb51dfc
+      size: 18841
     - path: data/processed/train_df.csv
       hash: md5
-      md5: aad577930771720b3a972095aeb4d14a
-      size: 113287
+      md5: f1da28f0b7701d3dd78065a1abc9e404
+      size: 105733
   preprocessing:
     cmd: python ml_dev/preprocessing.py
     deps:
     - path: data/processed/test_df.csv
       hash: md5
-      md5: cea18a6cc812b3ecb2cb91a62cd36e42
-      size: 20179
+      md5: c77738b2db64158f0e4bc221bfb51dfc
+      size: 18841
     - path: data/processed/train_df.csv
       hash: md5
-      md5: aad577930771720b3a972095aeb4d14a
-      size: 113287
+      md5: f1da28f0b7701d3dd78065a1abc9e404
+      size: 105733
     - path: ml_dev/preprocessing.py
       hash: md5
-      md5: 6645f71a369d155d19b165341cdde4f5
-      size: 3355
+      md5: 5819756c0942e8a78b5e284cef9794a1
+      size: 3385
     outs:
     - path: data/processed/pre_test_df.csv
       hash: md5
-      md5: 09a8dc448fa3d3efff53a81e85114263
-      size: 27709
+      md5: 8c630845a4e2f24092c3a35e31fa07c5
+      size: 25280
     - path: data/processed/pre_train_df.csv
       hash: md5
-      md5: 1c7524221b55863e446f447f5742cf24
-      size: 156661
+      md5: db6cd4a2ea25befc07e3eb32036202a8
+      size: 141716
+  feature_selection:
+    cmd: python ml_dev/feature_selection.py
+    deps:
+    - path: data/processed/pre_train_df.csv
+      hash: md5
+      md5: db6cd4a2ea25befc07e3eb32036202a8
+      size: 141716
+    - path: ml_dev/feature_selection.py
+      hash: md5
+      md5: 59bce822ab271ed5fe54ef1cd3c28ab4
+      size: 1406
+    outs:
+    - path: bin/best_features.pkl
+      hash: md5
+      md5: bf2aaa0276f425e8f5c1c94ff47a7a28
+      size: 162
