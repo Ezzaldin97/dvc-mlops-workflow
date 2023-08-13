@@ -6,3 +6,12 @@ stages:
     outs:
     - data/processed/train_df.csv
     - data/processed/test_df.csv
+  preprocessing:
+    cmd: python ml_dev/preprocessing.py
+    deps:
+    - ml_dev/preprocessing.py
+    - data/processed/train_df.csv
+    - data/processed/test_df.csv
+    outs:
+    - data/processed/pre_train_df.csv
+    - data/processed/pre_test_df.csv
