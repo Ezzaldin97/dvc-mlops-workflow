@@ -25,8 +25,8 @@ class PerformanceEvaluation:
         X, y = self.test.drop(self.target, axis = 1), self.test[self.target]
         preds = self.model.predict(X[self.best_features])
         probs = self.model.predict_proba(X[self.best_features])
-        metrics["f1-score"] = f1_score(y, preds, average = self.average)
-        metrics["roc_auc_score"] = roc_auc_score(y, probs, multi_class = self.multiclass_technique)
+        metrics["f1-score"] = float(f1_score(y, preds, average = self.average))
+        metrics["roc_auc_score"] = float(roc_auc_score(y, probs, multi_class = self.multiclass_technique))
         with open(os.path.join(".", "data", "metrics.yaml"), 'w') as file:
             yaml.dump(metrics, file, default_flow_style=False)
         cm = confusion_matrix(y, preds)
