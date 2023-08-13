@@ -101,8 +101,8 @@ stages:
       size: 25280
     - path: ml_dev/evaluate.py
       hash: md5
-      md5: 20efc280ef3ed45e4f7123a3a802980c
-      size: 2030
+      md5: 9d6d9c02f26853e056f193a4fc3e0a0b
+      size: 2006
     outs:
     - path: data/confusion_matrix.png
       hash: md5
