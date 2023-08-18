@@ -18,6 +18,7 @@ jupyter = "^1.0.0"
 statsmodels = "^0.13.0"
 pyarrow = "^12.0.0"
 dvc-gdrive = "^2.19.0"
+ruff = "^0.0.285"
 
 
 [tool.poetry.group.test.dependencies]
