@@ -18,16 +18,19 @@ class DataReader:
         file_format = self.filename.split(".")[-1]
         try:
             if file_format == "csv":
-                df = pd.read_csv(os.path.join(self.external_data_path, self.filename), engine = "pyarrow")
+                df = pd.read_csv(os.path.join(self.external_data_path,
+                                              self.filename), engine = "pyarrow")
             elif file_format == "parquet":
-                df = pd.read_parquet(os.path.join(self.external_data_path, self.filename), engine = "pyarrow")
+                df = pd.read_parquet(os.path.join(self.external_data_path, self.filename),
+                                     engine = "pyarrow")
             else:
                 df = pd.read_json(os.path.join(self.external_data_path, self.filename))
             return df
         except Exception as exp:
             print(f"error due to : {exp}")
     
-    def split_dataset(self, data:pd.DataFrame) -> Union[pd.DataFrame, pd.DataFrame]:
+    def split_dataset(self,
+                      data:pd.DataFrame) -> Union[pd.DataFrame, pd.DataFrame]:
         train, test = train_test_split(data, random_state=self.seed, test_size=self.test_size)
         return train, test
     

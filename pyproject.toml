@@ -24,6 +24,10 @@ ruff = "^0.0.285"
 [tool.poetry.group.test.dependencies]
 pytest = "^6.0.0"
 
+[tool.ruff]
+# Decrease the maximum line length to 170 characters.
+line-length = 170
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

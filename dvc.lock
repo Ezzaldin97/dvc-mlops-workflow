@@ -5,8 +5,8 @@ stages:
     deps:
     - path: ml_dev/data_reader.py
       hash: md5
-      md5: fdeeb4ec1b5be9129fc3e3e99e078f12
-      size: 1734
+      md5: d70dbb88479d0c9dfe065b4d4c1a13ab
+      size: 1842
     outs:
     - path: data/processed/test_df.csv
       hash: md5
@@ -101,8 +101,8 @@ stages:
       size: 25280
     - path: ml_dev/evaluate.py
       hash: md5
-      md5: 6651d76bfada9b853762c76942a57bf8
-      size: 2014
+      md5: d8bdf6ada424545aa7dfda74bbe9cf43
+      size: 2013
     outs:
     - path: eval/confusion_matrix.png
       hash: md5
@@ -112,3 +112,5 @@ stages:
       hash: md5
       md5: c6c4a028e566eb14a26d415340bc4089
       size: 65
+  py-linter:
+    cmd: ruff check --fix ml_dev/

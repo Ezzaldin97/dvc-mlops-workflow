@@ -1,4 +1,6 @@
 stages:
+  py-linter:
+    cmd: ruff check --fix ml_dev/
   data_reader:
     cmd: python ml_dev/data_reader.py
     deps:

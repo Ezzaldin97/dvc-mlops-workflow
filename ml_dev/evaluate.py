@@ -33,7 +33,7 @@ class PerformanceEvaluation:
         disp = ConfusionMatrixDisplay(confusion_matrix=cm)
         disp.plot()
         plt.savefig(os.path.join(".", "eval", "confusion_matrix.png"), dpi=150, bbox_inches='tight', pad_inches=0)
-        print(f"Evaluation done!")
+        print("Evaluation done!")
 
 if __name__ == '__main__':
     evaluate = PerformanceEvaluation()
